@@ -1,0 +1,79 @@
+{
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-customizable"
+        },
+        "cz-customizable": {
+            "config": "./node_modules/@picgo/bump-version/.cz-config.js"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "./node_modules/@picgo/bump-version/commitlint-picgo"
+        ]
+    },
+    "name": "learn",
+    "private": true,
+    "type": "module",
+    "description": "A online demo for vuepress-theme-hope",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:vuepress-theme-hope/online-demo.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "build": "vuepress build .",
+        "dev": "vuepress dev .",
+        "cz": "git add . && git-cz && git push origin main",
+        "release": "bump-version",
+        "fix-lint": "run-script-os",
+        "fix-lint:default": "(echo Attempting to fix lint... && markdownlint -c .markdownlint.json -p .markdownlintignore '**/*.md' -f && echo Fixed successfully, please commit.) || (echo Fix failed! && exit 1)",
+        "fix-lint:win32": "(echo Attempting to fix lint... && markdownlint -c .markdownlint.json -p .markdownlintignore **/*.md -f && echo Fixed successfully, please commit.) || (echo Fix failed! && exit 1)",
+        "lint": "run-script-os",
+        "lint:default": "(echo Linting... && markdownlint -c .markdownlint.json -p .markdownlintignore '**/*.md' && echo Lint passed.) || (echo Lint failed! Please review and fix errors. && exit 1)",
+        "lint:win32": "(echo Linting... && markdownlint -c .markdownlint.json -p .markdownlintignore **/*.md && echo Lint passed.) || (echo Lint failed! Please review and fix errors. && exit 1)",
+        "lint-ci": "run-script-os",
+        "lint-ci:default": "(echo Linting... && markdownlint -c .markdownlint.json -p .markdownlintignore '**/*.md' && echo Lint passed.) || ((echo Lint failed, attempting fix... && markdownlint -c .markdownlint.json -p .markdownlintignore '**/*.md' -f && echo Fix generated successfully. Please apply the following diff using git apply && git diff) || echo Fix failed! && exit 1)",
+        "lint-ci:win32": "(echo Linting... && markdownlint -c .markdownlint.json -p .markdownlintignore **/*.md && echo Lint passed.) || ((echo Lint failed, attempting fix... && markdownlint -c .markdownlint.json -p .markdownlintignore **/*.md -f && echo Fix generated successfully. Please apply the following diff using git apply && git diff) || echo Fix failed! && exit 1)",
+        "sort-dict": "node ./scripts/sortDict.js",
+        "spellcheck": "run-script-os",
+        "spellcheck:default": "(spellchecker --plugins spell indefinite-article repeated-words syntax-urls --dictionaries dictionary/en.txt dictionary/vi.txt --files '**/*.md'  && echo Spellcheck passed.) || (echo Spellcheck failed! Please review and fix errors/add words to dictionary as needed. && exit 1)",
+        "spellcheck:win32": "(spellchecker --plugins spell indefinite-article repeated-words syntax-urls --dictionaries dictionary/en.txt dictionary/vi.txt --files **/*.md  && echo Spellcheck passed.) || (echo Spellcheck failed! Please review and fix errors/add words to dictionary as needed. && exit 1)",
+        "test": "run-script-os",
+        "test:default": "pnpm run lint --silent; pnpm run spellcheck --silent",
+        "test:win32": "pnpm run lint --silent & pnpm run spellcheck --silent"
+    },
+    "devDependencies": {
+        "@picgo/bump-version": "^1.1.2",
+        "@vuepress/bundler-vite": "2.0.0-rc.17",
+        "@vuepress/helper": "2.0.0-rc.52",
+        "@vuepress/plugin-pwa": "2.0.0-rc.61",
+        "@vuepress/plugin-shiki": "2.0.0-rc.69",
+        "@vuepress/plugin-slimsearch": "2.0.0-rc.63",
+        "commitizen": "^4.3.1",
+        "commitlint": "^19.6.1",
+        "cz-customizable": "^7.3.0",
+        "husky": "^9.1.7",
+        "markdownlint-cli": "^0.43.0",
+        "markmap-lib": "^0.17.2",
+        "markmap-toolbar": "^0.17.2",
+        "markmap-view": "^0.17.2",
+        "mathjax-full": "^3.2.2",
+        "prettier": "^3.4.2",
+        "run-script-os": "^1.1.6",
+        "sass": "^1.83.0",
+        "spellchecker-cli": "^7.0.0",
+        "stylelint": "^16.12.0",
+        "stylelint-prettier": "^5.0.2",
+        "vidstack": "^1.12.12",
+        "vue": "^3.5.13",
+        "vuepress": "2.0.0-rc.17",
+        "vuepress-plugin-remove-html-extension": "^1.16.0",
+        "vuepress-theme-hope": "2.0.0-rc.66"
+    }
+}

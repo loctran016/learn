@@ -1,0 +1,262 @@
+// Import necessary presets
+@use 'vuepress-theme-hope/presets/bounce-icon';
+@use 'vuepress-theme-hope/presets/hr-driving-car';
+@use 'vuepress-theme-hope/presets/left-blog-info';
+@use 'vuepress-theme-hope/presets/squircle-blogger-avatar.scss';
+@import './config.scss';
+@import './palette.scss';
+// Define font-face in a consolidated block
+
+.vp-article-title span {
+    text-transform: capitalize;
+    &:hover {
+        color: $theme-color;
+    }
+}
+
+// Global styles
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+
+    .vp-page-title h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.3em;
+        padding: 0.6rem 1rem;
+    }
+
+    h5 {
+        font-size: 1.2em;
+    }
+
+    // thead {
+    //     font-size: 1.1em;
+    // }
+
+    .vp-article-title {
+        font-size: 1.6rem;
+    }
+
+    .vp-blogger-name {
+        font-size: 1.6em;
+        margin-bottom: 0.1rem;
+    }
+
+    .vp-blogger-description {
+        font-size: 1em;
+        margin-left: min(0.7rem);
+        margin-right: min(0.7rem);
+        // margin: 1rem auto auto 1rem;
+        margin-top: 0.6rem;
+    }
+
+    .vp-back-to-top-button {
+        bottom: 1rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 1.2rem;
+        --hint-font-size: 1.2rem;
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        span,
+        li {
+            letter-spacing: 1.4px;
+        }
+
+        .vp-back-to-top-button {
+            bottom: 1.6rem;
+            right: 1.6rem;
+        }
+
+        .hint-container.important p {
+            font-size: 1.3rem;
+            letter-spacing: 1.2px;
+        }
+
+        .hint-container {
+            ul > * + *,
+            ol > * + * {
+                margin-top: 0.5rem;
+            }
+        }
+
+        .highlight-font {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+// Highlight classes
+.highlight {
+    &-font {
+        font-family: 'Patrick Hand', Cambria, Cochin, Georgia, Times,
+            'Times New Roman', serif;
+    }
+    &--1 {
+        color: hsl(0, 100%, 60%);
+    }
+    &--2 {
+        color: hsl(90, 100%, 49%);
+    }
+    &--3 {
+        color: hsl(140, 100%, 49%);
+    }
+    &--4 {
+        color: hsl(170, 100%, 49%);
+    }
+    &--5 {
+        color: hsl(210, 100%, 49%);
+    }
+    &--6 {
+        color: hsl(270, 100%, 50%);
+    }
+    &--7 {
+        color: hsl(300, 100%, 49%);
+    }
+}
+li:has(> .highlight--1)::marker {
+    color: hsl(0, 100%, 60%);
+}
+li:has(> .highlight--2)::marker {
+    color: hsl(90, 100%, 49%);
+}
+li:has(> .highlight--3)::marker {
+    color: hsl(140, 100%, 49%);
+}
+li:has(> .highlight--4)::marker {
+    color: hsl(170, 100%, 49%);
+}
+li:has(> .highlight--5)::marker {
+    color: hsl(210, 100%, 49%);
+}
+li:has(> .highlight--6)::marker {
+    color: hsl(270, 100%, 50%);
+}
+li:has(> .highlight--7)::marker {
+    color: hsl(300, 100%, 49%);
+}
+
+// Dark theme overrides
+html[data-theme='dark'] .theme-hope-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    thead {
+        color: #efbf04;
+        letter-spacing: 1px;
+    }
+}
+
+// Additional styles
+.vp-article-title > span {
+    letter-spacing: 1.4px;
+}
+
+#main-content {
+    p:has(> img) {
+        text-align: center;
+    }
+
+    img {
+        border-radius: 0.5rem;
+    }
+
+    .markmap-wrapper p {
+        font-size: 1rem;
+        line-height: 1.6;
+        letter-spacing: normal;
+    }
+
+    u {
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+    }
+
+    p:has(+ ul) {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        font-size: 1.2em;
+        font-family: 'Patrick Hand', Cambria, Cochin, Georgia, Times,
+            'Times New Roman', serif;
+    }
+    p + ul {
+        margin-top: 0.5rem;
+    }
+}
+
+.vp-blog-hero.no-bg {
+    height: 3rem;
+    opacity: 0;
+}
+
+.vp-blogger-name {
+    letter-spacing: 1.8px;
+}
+
+.timeline-list-wrapper .timeline-item {
+    gap: 2px;
+}
+
+.timeline-list-wrapper .timeline-title {
+    max-width: 80%;
+}
+
+.vp-dropdown-title {
+    letter-spacing: 1px;
+}
+
+.vp-blogger-avatar {
+    @media screen and (min-width: 768px) {
+        margin-top: 0.5rem;
+    }
+}
+
+.vp-nav-links {
+    font-size: 1rem;
+}
+
+.route-link .vp-article-title {
+    line-height: 1.4;
+    margin-bottom: 0.1rem;
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
+}
+
+.vp-page .vp-blog-info-wrapper {
+    margin-top: 0;
+}
+
+div.markmap-wrapper {
+    letter-spacing: 1;
+}
+
+.route-link.vp-blog-count {
+    margin-bottom: 0.9rem;
+
+    .count {
+        margin-bottom: 0.4rem;
+    }
+    > *:last-child {
+        font-size: 1rem;
+    }
+}
