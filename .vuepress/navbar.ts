@@ -10,6 +10,8 @@ export const enNavbar = navbar([
         prefix: '/category/',
         children: [
             { text: 'Front End', link: 'front-end/' },
+            { text: 'Design', link: 'des/' },
+            { text: 'IELTS', link: 'ielts/' },
             // { text: 'Năm 2', link: 'y2/' },
             // { text: 'Năm 3', link: 'y3/' },
             // { text: 'Năm 4', link: 'y4/' },
