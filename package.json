@@ -51,7 +51,7 @@
     "devDependencies": {
         "@picgo/bump-version": "^1.1.2",
         "@vuepress/bundler-vite": "2.0.0-rc.17",
-        "@vuepress/helper": "2.0.0-rc.52",
+        "@vuepress/helper": "2.0.0-rc.135",
         "@vuepress/plugin-pwa": "2.0.0-rc.61",
         "@vuepress/plugin-shiki": "2.0.0-rc.69",
         "@vuepress/plugin-slimsearch": "2.0.0-rc.63",
